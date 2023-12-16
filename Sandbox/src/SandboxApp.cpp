@@ -10,9 +10,7 @@ private:
 
 };
 
-int main()
+Hazel::Application* Hazel::CreateApplication()
 {
-	Sandbox* sanbox = new Sandbox();
-	sanbox->Run();
-	delete sanbox;
+	return new Sandbox();
 }
