@@ -1,9 +1,6 @@
 # Auto generated files
-<<<<<<< HEAD
 [Dd]ebug/
 [Rr]elease/
-=======
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 build/*
 *.slo
 *.lo
@@ -79,7 +76,6 @@ compile_commands.json
 
 # idea
 .idea/
-<<<<<<< HEAD
 .cache/
 .vscode/
 cmake-build-*/
@@ -97,8 +93,3 @@ cmake-build-*/
 # macos
 *.DS_store
 *.xcodeproj/
-=======
-
-# vscode
-.vscode/
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958

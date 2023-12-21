@@ -49,20 +49,12 @@ protected:
     std::uint16_t set_foreground_color_(std::uint16_t attribs);
 
     // print a range of formatted message to console
-<<<<<<< HEAD
     void print_range_(const memory_buf_t &formatted, size_t start, size_t end);
 
     // in case we are redirected to file (not in console mode)
     void write_to_file_(const memory_buf_t &formatted);
 
     void set_color_mode_impl(color_mode mode);
-=======
-    void _print_range(const details::log_msg &msg, size_t start, size_t end)
-    {
-        DWORD size = static_cast<DWORD>(end - start);
-        WriteFile(out_handle_, msg.formatted.data() + start, size, nullptr, nullptr);
-    }
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 };
 
 template <typename ConsoleMutex>

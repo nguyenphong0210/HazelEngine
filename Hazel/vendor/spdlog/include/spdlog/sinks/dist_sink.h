@@ -71,16 +71,7 @@ protected:
             sub_sink->set_formatter(base_sink<Mutex>::formatter_->clone());
         }
     }
-<<<<<<< HEAD
     std::vector<std::shared_ptr<sink>> sinks_;
-=======
-
-    void remove_all_sinks()
-    {
-        std::lock_guard<Mutex> lock(base_sink<Mutex>::_mutex);
-        _sinks.clear();
-    }
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 };
 
 using dist_sink_mt = dist_sink<std::mutex>;

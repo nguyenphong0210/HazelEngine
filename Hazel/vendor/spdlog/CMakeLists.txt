@@ -13,13 +13,6 @@ spdlog_extract_version()
 project(spdlog VERSION ${SPDLOG_VERSION} LANGUAGES CXX)
 message(STATUS "Build spdlog: ${SPDLOG_VERSION}")
 
-<<<<<<< HEAD
-=======
-cmake_minimum_required(VERSION 3.1)
-project(spdlog VERSION 0.17.0 LANGUAGES CXX)
-include(CTest)
-include(CMakeDependentOption)
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 include(GNUInstallDirs)
 
 # ---------------------------------------------------------------------------------------

@@ -15,9 +15,9 @@ CMake:
 Or copy files src/*.cpp to your build tree and pass the -DSPDLOG_COMPILED_LIB to the compiler.
 
 Tested on:
-gcc 4.8.1 or above
-clang 3.5 or above
-Visual Studio 2013 or above
+gcc 4.8.1 and above
+clang 3.5
+Visual Studio 2013
 
 
 

@@ -15,7 +15,6 @@ $ cmake .. && make -j
 see example [CMakeLists.txt](https://github.com/gabime/spdlog/blob/v1.x/example/CMakeLists.txt) on how to use.
 
 ## Platforms
-<<<<<<< HEAD
 * Linux, FreeBSD, OpenBSD, Solaris, AIX
 * Windows (msvc 2013+, cygwin)
 * macOS (clang 3.5+)
@@ -40,18 +39,6 @@ see example [CMakeLists.txt](https://github.com/gabime/spdlog/blob/v1.x/example/
 * Very fast (see [benchmarks](#benchmarks) below).
 * Headers only or compiled
 * Feature-rich formatting, using the excellent [fmt](https://github.com/fmtlib/fmt) library.
-=======
- * Linux, FreeBSD, Solaris, AIX
- * Windows (vc 2013+, cygwin)
- * Mac OSX (clang 3.5+)
- * Android
-
-## Features
-* Very fast - performance is the primary goal (see [benchmarks](#benchmarks) below).
-* Headers only, just copy and use.
-* Feature rich [call style](#usage-example) using the excellent [fmt](https://github.com/fmtlib/fmt) library.
-* Optional printf syntax support.
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 * Asynchronous mode (optional)
 * [Custom](https://github.com/gabime/spdlog/wiki/3.-Custom-formatting) formatting.
 * Multi/Single threaded loggers.
@@ -70,38 +57,7 @@ see example [CMakeLists.txt](https://github.com/gabime/spdlog/blob/v1.x/example/
 
 ## Usage samples
 
-<<<<<<< HEAD
 #### Basic usage
-=======
-
-## Benchmarks
-
-Below are some [benchmarks](bench) comparing popular log libraries under Ubuntu 64 bit, Intel i7-4770 CPU @ 3.40GHz
-
-#### Synchronous mode
-Time needed to log 1,000,000 lines in synchronous mode (in seconds, the best of 3 runs):
-
-|threads|boost log 1.54|glog   |easylogging |spdlog|
-|-------|:-------:|:-----:|----------:|------:|
-|1|       4.169s  |1.066s |0.975s     |0.392s|
-|10|     6.180s   |3.032s |2.857s     |0.773s|
-|100|     5.981s  |1.139s |4.512s     |0.587s|
-
-
-#### Asynchronous mode
-Time needed to log 1,000,000 lines in asynchronous mode, i.e. the time it takes to put them in the async queue (in seconds, the best of 3 runs):
-
-|threads|g2log <sup>async logger</sup>   |spdlog <sup>async mode</sup>|
-|:-------|:-----:|-------------------------:|
-|1|       1.850s |0.39s |
-|10|      0.943s  |0.416s|
-|100|      0.959s |0.413s|
-
-
-
-
-## Usage Example
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 ```c++
 #include "spdlog/spdlog.h"
 
@@ -304,19 +260,11 @@ void callback_example()
 #include "spdlog/sinks/basic_file_sink.h"
 void async_example()
 {
-<<<<<<< HEAD
     // default thread pool settings can be modified *before* creating the async logger:
     // spdlog::init_thread_pool(8192, 1); // queue with 8k items and 1 backing thread.
     auto async_file = spdlog::basic_logger_mt<spdlog::async_factory>("async_file_logger", "logs/async_log.txt");
     // alternatively:
     // auto async_file = spdlog::create_async<spdlog::sinks::basic_file_sink_mt>("async_file_logger", "logs/async_log.txt");   
-=======
-    size_t q_size = 4096; 
-    spd::set_async_mode(q_size);
-    auto async_file = spd::daily_logger_st("async_file_logger", "logs/async_log.txt");
-    for (int i = 0; i < 100; ++i)
-        async_file->info("Async message #{}", i);
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 }
 
 ```

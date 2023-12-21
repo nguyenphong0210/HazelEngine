@@ -12,17 +12,10 @@ void prepare_logdir() {
 #ifdef _WIN32
     system("rmdir /S /Q test_logs");
 #else
-<<<<<<< HEAD
     auto rv = system("rm -rf test_logs");
     if (rv != 0) {
         throw std::runtime_error("Failed to rm -rf test_logs");
     }
-=======
-    auto rv = system("mkdir -p logs");
-    (void)rv;
-    rv = system("rm -f logs/*");
-    (void)rv;
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 #endif
 }
 

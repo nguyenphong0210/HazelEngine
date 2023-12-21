@@ -104,7 +104,6 @@ int main(int, char *[]) {
     }
 }
 
-<<<<<<< HEAD
 #include "spdlog/sinks/stdout_color_sinks.h"
 // or #include "spdlog/sinks/stdout_sinks.h" if no colors needed.
 void stdout_logger_example() {
@@ -165,15 +164,6 @@ void async_example() {
     // "logs/async_log.txt");
 
     for (int i = 1; i < 101; ++i) {
-=======
-void async_example()
-{
-    size_t q_size = 4096;
-    spdlog::set_async_mode(q_size);
-    auto async_file = spd::daily_logger_st("async_file_logger", "logs/async_log.txt");
-    for (int i = 0; i < 100; ++i)
-    {
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
         async_file->info("Async message #{}", i);
     }
 }

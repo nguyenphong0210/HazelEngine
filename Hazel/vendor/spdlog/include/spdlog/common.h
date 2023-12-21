@@ -3,14 +3,8 @@
 
 #pragma once
 
-<<<<<<< HEAD
 #include <spdlog/details/null_mutex.h>
 #include <spdlog/tweakme.h>
-=======
-#define SPDLOG_VERSION "0.17.0"
-
-#include "tweakme.h"
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 
 #include <atomic>
 #include <chrono>
@@ -305,33 +299,11 @@ enum class pattern_time_type {
 //
 // Log exception
 //
-<<<<<<< HEAD
 class SPDLOG_API spdlog_ex : public std::exception {
 public:
     explicit spdlog_ex(std::string msg);
     spdlog_ex(const std::string &msg, int last_errno);
     const char *what() const SPDLOG_NOEXCEPT override;
-=======
-class spdlog_ex : public std::exception
-{
-public:
-    explicit spdlog_ex(std::string msg)
-        : _msg(std::move(msg))
-    {
-    }
-
-    spdlog_ex(const std::string &msg, int last_errno)
-    {
-        fmt::MemoryWriter writer;
-        fmt::format_system_error(writer, last_errno, msg);
-        _msg = writer.str();
-    }
-
-    const char *what() const SPDLOG_NOEXCEPT override
-    {
-        return _msg.c_str();
-    }
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
 
 private:
     std::string msg_;
@@ -392,7 +364,6 @@ SPDLOG_CONSTEXPR_FUNC spdlog::wstring_view_t to_string_view(spdlog::wstring_view
 }
 #endif
 
-<<<<<<< HEAD
 #ifndef SPDLOG_USE_STD_FORMAT
 template <typename T, typename... Args>
 inline fmt::basic_string_view<T> to_string_view(fmt::basic_format_string<T, Args...> fmt) {
@@ -438,15 +409,3 @@ constexpr T conditional_static_cast(U value) {
 #ifdef SPDLOG_HEADER_ONLY
     #include "common-inl.h"
 #endif
-=======
-#define SPDLOG_CATCH_AND_HANDLE                                                                                                            \
-    catch (const std::exception &ex)                                                                                                       \
-    {                                                                                                                                      \
-        _err_handler(ex.what());                                                                                                           \
-    }                                                                                                                                      \
-    catch (...)                                                                                                                            \
-    {                                                                                                                                      \
-        _err_handler("Unknown exeption in logger");                                                                                        \
-    }
-} // namespace spdlog
->>>>>>> dea6bb1085466370ed6d629b4d462f299db75958
