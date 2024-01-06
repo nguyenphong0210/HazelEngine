@@ -7,4 +7,5 @@
 
 // Entry Point
 #include "Hazel/EntryPoint.h"
+#include "Hazel/ImGui/ImGuiLayer.h"
 // ----------------------------
