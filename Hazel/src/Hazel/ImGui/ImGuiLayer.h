@@ -23,7 +23,7 @@ namespace Hazel {
 		bool OnMouseScrolledEvent(MouseScrolledEvent& e);
 		bool OnKeyPressedEvent(KeyPressedEvent& e);
 		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
-		//void OnKeyTypeEvent(KeyTypedEvent& e);
+		bool OnKeyTypeEvent(KeyTypedEvent& e);
 		bool OnWindowResizeEvent(WindowResizeEvent& e);
 	private:
 		float m_Time = 0.0f;
